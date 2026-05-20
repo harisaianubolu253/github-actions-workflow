@@ -1,0 +1,23 @@
+{
+  "name": "lab-1-4-ci-github-actions",
+  "version": "1.0.0",
+  "description": "A small Node.js calculator project with ESLint, Jest, and GitHub Actions CI.",
+  "main": "src/calculator.js",
+  "scripts": {
+    "lint": "eslint .",
+    "test": "jest"
+  },
+  "keywords": [
+    "github-actions",
+    "ci",
+    "nodejs",
+    "jest",
+    "eslint"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^9.27.0",
+    "jest": "^29.7.0"
+  }
+}
