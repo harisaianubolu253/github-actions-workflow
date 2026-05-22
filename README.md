@@ -1,4 +1,4 @@
-# Lab : CI with GitHub Actions
+# Lab 1: CI with GitHub Actions
 
 ## Project Overview
 
