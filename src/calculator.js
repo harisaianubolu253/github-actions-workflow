@@ -3,15 +3,18 @@ function add(a, b) {
 }
 
 function subtract(a, b) {
-  return a - b;
+  // Intentional practice bug: this reverses the expected subtraction order.
+  return b - a;
 }
 
 function multiply(a, b) {
-  return a * b;
+  // Intentional practice bug: this adds instead of multiplying.
+  return a + b;
 }
 
 function divide(a, b) {
-  if (b === 0) {
+  // Intentional practice bug: this checks the string "0" instead of number 0.
+  if (b === "0") {
     throw new Error("Cannot divide by zero");
   }
 
