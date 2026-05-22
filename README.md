@@ -1,4 +1,4 @@
-# Lab 2: CI with GitHub Actions
+# Lab 1.4: CI with GitHub Actions
 
 ## Project Overview
 
@@ -13,22 +13,37 @@ The sample app implements a calculator with four operations:
 
 The project uses ESLint for linting, Jest for automated tests, and GitHub Actions to run CI checks on pull requests, pushes to `main`, and manual workflow runs.
 
+## Student Practice Mode
+
+This version intentionally includes a few small calculator bugs in `src/calculator.js`.
+
+The goal is for students to:
+
+- Run the CI checks locally.
+- Read the Jest failure output.
+- Identify the broken function.
+- Fix the source code.
+- Push the fix and verify GitHub Actions turns green.
+
+Use `SOLUTIONS.md` only after trying to debug the failures first.
+
 ## Folder Structure
 
 ```text
 .
-├── .github/
-│   └── workflows/
-│       └── ci.yml
-├── src/
-│   └── calculator.js
-├── tests/
-│   └── calculator.test.js
-├── .gitignore
-├── eslint.config.js
-├── package-lock.json
-├── package.json
-└── README.md
+|-- .github/
+|   `-- workflows/
+|       `-- ci.yml
+|-- src/
+|   `-- calculator.js
+|-- tests/
+|   `-- calculator.test.js
+|-- .gitignore
+|-- eslint.config.js
+|-- package-lock.json
+|-- package.json
+|-- README.md
+`-- SOLUTIONS.md
 ```
 
 ## Install Dependencies
@@ -54,6 +69,8 @@ npm test
 ```
 
 This command runs the Jest test suite. The CI workflow fails if any test fails.
+
+In this practice version, some tests are expected to fail until students fix the intentional bugs.
 
 ## How the GitHub Actions Workflow Works
 
@@ -82,7 +99,7 @@ If either linting or tests fail, the workflow job fails.
 1. Open the repository on GitHub.
 2. Select the **Actions** tab.
 3. Choose the latest **CI** workflow run.
-4. Open the **build** job.
+4. Open the **Lint and Test** job.
 5. Expand each step to review command output.
 
 The most useful steps for debugging are usually:
@@ -107,6 +124,15 @@ Common fixes:
 - If lint fails, read the ESLint output and update the file and line reported.
 - If tests fail, read the Jest failure message, fix the source code or test expectation, and run `npm test` again.
 - If CI passes locally but fails on GitHub, check that the workflow uses the expected Node.js version and that all required files were committed.
+
+For this practice lab, the expected debugging path is:
+
+1. Run `npm test`.
+2. Read the failing test names.
+3. Open `src/calculator.js`.
+4. Fix one bug at a time.
+5. Re-run `npm test` after each fix.
+6. Use `SOLUTIONS.md` if stuck.
 
 ## Creating a Pull Request and Verifying CI
 
@@ -134,3 +160,5 @@ Common fixes:
 - [x] Workflow runs `npm ci`.
 - [x] Workflow runs `npm run lint`.
 - [x] Workflow runs `npm test`.
+- [x] Intentional practice bugs added for debugging.
+- [x] Solutions guide added.
