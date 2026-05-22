@@ -6,7 +6,7 @@ describe("calculator", () => {
   });
 
   test("subtracts two numbers", () => {
-    expect(subtract(10, 4)).toBe(6);
+    expect(subtract(4, 10)).toBe(6);
   });
 
   test("multiplies two numbers", () => {
